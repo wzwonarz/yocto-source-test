@@ -7,7 +7,7 @@ LDFLAGS=
 DESTDIR=
 BINDIR=/usr/bin
 
-SOURCES=hello.c helloprint.c
+SOURCES=hello.c
 OBJECTS=$(SOURCES:.c=.o)
 
 EXECUTABLE=hellomake
@@ -21,7 +21,7 @@ $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(LDFLAGS) $^ -o $@
 
 clean:
-	$(RM) $(EXECUTABLE) *.o
+	$(RM) -f $(EXECUTABLE) *.o
 
 install: $(EXECUTABLE)
 	mkdir -p $(DESTDIR)/$(BINDIR)
